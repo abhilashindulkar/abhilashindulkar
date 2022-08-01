@@ -1,7 +1,7 @@
 ### Hi there, I am Abhilash 👋
 
 - 🔭 DevOps & Cloud Engineer.
-- ⚡ Fun fact: Team Cap & Iron Man. I can do this all day! 💪 & I'm Iron Man! ✋
+- 💡 Fav Quotes: I can do this all day! 💪 & I'm Iron Man! ✋
 <!--
 <details>
 <summary>- 📫 How to reach me:</summary>
