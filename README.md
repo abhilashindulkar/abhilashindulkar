@@ -11,4 +11,4 @@
 </details>
 -->
 
-[![Abhilash's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=abhilashindulkar&theme=github)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Abhilash's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=abhilashindulkar&theme=github)](https://github.com/ashutosh00710/github-readme-activity-graph)
