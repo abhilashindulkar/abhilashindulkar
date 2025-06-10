@@ -1,7 +1,8 @@
 ### Hi there, I am Abhilash 👋
 
 - 🔭 DevOps & Cloud Engineer.
-- 💡 Fav Quotes: I can do this all day! 💪 & I'm Iron Man! ✋
+- 💡 Fav Quotes: I'm Iron Man! ✋
+  
 <!--
 <details>
 <summary>- 📫 How to reach me:</summary>
@@ -11,11 +12,12 @@
 </details>
 -->
 
+<!--
+
 <div align="center">
 
-<!--
 https://github.community/t/support-theme-context-for-images-in-light-vs-dark-mode/147981/84
--->
+
 <a href="https://github.com/abhilashindulkar/github-stats#gh-dark-mode-only">
 <img src="https://github.com/abhilashindulkar/github-stats/blob/master/generated/overview.svg#gh-dark-mode-only" />
 <img src="https://github.com/abhilashindulkar/github-stats/blob/master/generated/languages.svg#gh-dark-mode-only" />
@@ -26,3 +28,4 @@ https://github.community/t/support-theme-context-for-images-in-light-vs-dark-mod
 </a>
 
 </div>
+-->
