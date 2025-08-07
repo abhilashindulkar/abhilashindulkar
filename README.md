@@ -1,7 +1,7 @@
 ### Hi there, I am Abhilash 👋
 
 - 🔭 DevOps & Cloud Engineer.
-- 💡 Fav Quotes: I'm Iron Man! ✋
+- 💡 Fav Quote: I'm Iron Man! ✋
   
 <!--
 <details>
