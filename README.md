@@ -1,7 +1,12 @@
 ### Hi there, I am Abhilash 👋
 
-- 🔭 DevOps & Cloud Engineer.
+- 🔭 DevOps & Cloud Engineer with 9 years of experience
+- 🎯 Sr. Systems Engineer III at EPAM Systems
+- ☁️ Certified: 6x GCP | 1x AWS | HashiCorp Terraform | KCNA
 - 💡 Fav Quote: I'm Iron Man! ✋
+
+### 🌐 Visit My Portfolio
+**[Terminal-Style Portfolio](https://abhilashindulkar.github.io/abhilashindulkar/)** - Interactive CLI experience
   
 <!--
 <details>
