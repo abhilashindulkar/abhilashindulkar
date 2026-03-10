@@ -73,7 +73,6 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed update history.
 - 🐙 [GitHub](https://github.com/abhilashindulkar)
 - ✍️ [Medium](https://abhilashindulkar.medium.com)
 - 🎥 [YouTube - @starktalksdevops](https://www.youtube.com/@starktalksdevops)
-- 📧 [abhilashindulkar@gmail.com](mailto:abhilashindulkar@gmail.com)
 
 ## 📄 License
 
