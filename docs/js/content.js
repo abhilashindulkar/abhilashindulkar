@@ -5,7 +5,6 @@ const portfolioData = {
         title: "Sr. Systems Engineer III - DevOps",
         experience: "9 years",
         email: "abhilashindulkar@gmail.com",
-        phone: "+918792794919",
         summary: `Having 9 years of experience as a DevOps & Cloud Engineer with exposure to Software Configuration Management, Build & Release Management, IaC & CI/CD.
 
 Certified: 6*GCP, HCTA-003, KCNA, 1*AWS
@@ -166,7 +165,7 @@ Core Expertise:
         linkedin: "https://www.linkedin.com/in/abhilashindulkar",
         github: "https://github.com/abhilashindulkar",
         medium: "https://abhilashindulkar.medium.com",
-        youtube: "https://www.youtube.com/@abhilashindulkar"
+        youtube: "https://www.youtube.com/@starktalksdevops"
     },
 
     education: {
