@@ -1,67 +1,106 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.dataset.tab;
-
-            tabButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-selected', 'false');
-            });
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            button.classList.add('active');
-            button.setAttribute('aria-selected', 'true');
-            document.getElementById(targetTab).classList.add('active');
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    });
-
     renderExperience();
     renderSkills();
     renderProjects();
     renderCertifications();
+    initScrollSpy();
+    initMobileMenu();
+    initScrollReveal();
+});
 
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+/* ── Scroll Spy ── */
+function initScrollSpy() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                navLinks.forEach(link => link.classList.remove('active'));
+                const active = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+                if (active) active.classList.add('active');
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.2, rootMargin: '-10% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.getElementById(link.dataset.section);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                if (overlay) overlay.classList.remove('active');
+                document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}
+
+/* ── Mobile Menu ── */
+function initMobileMenu() {
+    const toggle = document.querySelector('.menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    let overlay = document.querySelector('.sidebar-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'sidebar-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    function close() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', () => {
+        const open = sidebar.classList.toggle('open');
+        overlay.classList.toggle('active', open);
+        toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    overlay.addEventListener('click', close);
+}
+
+/* ── Scroll Reveal ── */
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.timeline-item, .skill-category, .project-card, .cert-card').forEach((el, i) => {
-        el.style.transitionDelay = `${i * 0.05}s`;
+        el.style.transitionDelay = `${Math.min(i * 0.04, 0.3)}s`;
         observer.observe(el);
     });
-});
+}
 
-function renderTechPills(techArray) {
-    return techArray
-        .map(t => `<span class="tech-pill">${t}</span>`)
-        .join('');
+/* ── Render Helpers ── */
+function renderTechPills(arr) {
+    return arr.map(t => `<span class="tech-pill">${t}</span>`).join('');
 }
 
 function renderExperience() {
-    const timeline = document.getElementById('experience-timeline');
+    const container = document.getElementById('experience-timeline');
 
     portfolioData.experience.forEach(job => {
         const el = document.createElement('div');
         el.className = 'timeline-item';
-
         el.innerHTML = `
             <div class="timeline-header">
-                <div class="company-name">${job.company}</div>
-                <div class="job-title">${job.title}</div>
-                <div class="job-period">${job.period}</div>
+                <div class="timeline-left">
+                    <div class="company-name">${job.company}</div>
+                    <div class="job-title">${job.title}</div>
+                </div>
+                <span class="job-period">${job.period}</span>
             </div>
             <div class="project-info">
                 <p><strong>Client:</strong> ${job.client}</p>
@@ -75,8 +114,7 @@ function renderExperience() {
                 <div class="tech-pills">${renderTechPills(job.tech)}</div>
             </div>
         `;
-
-        timeline.appendChild(el);
+        container.appendChild(el);
     });
 }
 
@@ -100,7 +138,6 @@ function renderProjects() {
     portfolioData.projects.forEach(project => {
         const el = document.createElement('div');
         el.className = 'project-card';
-
         el.innerHTML = `
             <h3>${project.name}</h3>
             <p class="project-description">${project.description}</p>
@@ -112,7 +149,6 @@ function renderProjects() {
                 <div class="tech-pills">${renderTechPills(project.tech)}</div>
             </div>
         `;
-
         grid.appendChild(el);
     });
 }
@@ -130,16 +166,13 @@ function renderCertifications() {
     portfolioData.certifications.forEach(cert => {
         const el = document.createElement('div');
         el.className = 'cert-card';
-        const color = PROVIDER_COLORS[cert.provider] || '#3b82f6';
-        el.style.setProperty('--cert-accent', color);
-
+        el.style.setProperty('--cert-accent', PROVIDER_COLORS[cert.provider] || '#6366f1');
         el.innerHTML = `
             <span class="cert-provider">${cert.provider.toUpperCase()}</span>
             <div class="cert-name">${cert.name}</div>
             <div class="cert-date">${cert.date}</div>
             <div class="cert-id">${cert.id}</div>
         `;
-
         grid.appendChild(el);
     });
 }
