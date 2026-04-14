@@ -3,9 +3,9 @@ const portfolioData = {
     about: {
         name: "Abhilash Indulkar",
         title: "Sr. Systems Engineer III - DevOps",
-        experience: "9 years",
+        experience: "9.3 years",
         email: "abhilashindulkar@gmail.com",
-        summary: `Having 9 years of experience as a DevOps & Cloud Engineer with exposure to Software Configuration Management, Build & Release Management, IaC & CI/CD.
+        summary: `Having 9.3 years of experience as a DevOps & Cloud Engineer with exposure to Software Configuration Management, Build & Release Management, IaC & CI/CD.
 
 Certified: 6*GCP, HCTA-003, KCNA, 1*AWS
 

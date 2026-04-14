@@ -1,39 +1,39 @@
 # Abhilash Indulkar - Portfolio Website
 
-This is a terminal-themed portfolio website showcasing my DevOps and Cloud Engineering experience.
+Modern multi-tab portfolio showcasing DevOps and Cloud Engineering experience.
 
 ## Features
 
-- Interactive terminal interface
-- Command-line navigation
-- Detailed sections: About, Experience, Skills, Certifications, Projects, Contact
-- Responsive design
-- Auto-complete and command history support
+- Multi-tab navigation (About, Experience, Skills, Projects, Certifications, Contact)
+- Animated tech orbit and floating particle effects
+- Responsive design (mobile, tablet, desktop)
+- Professional dark theme with blue/purple accents
+- Accessible tab interface with ARIA roles
 
-## Available Commands
+## Available Sections
 
-- `help` - Display all available commands
-- `about` - Learn about professional background
-- `experience` - View work experience
-- `skills` - Display technical skills
-- `certifications` - List professional certifications
-- `projects` - Showcase key projects
-- `education` - View educational background
-- `contact` - Get contact information
-- `links` - Social media links
-- `clear` - Clear terminal screen
+- **About** - Professional summary and core expertise
+- **Experience** - Timeline view of work history
+- **Skills** - Technical skills grid
+- **Projects** - Key project showcase
+- **Certifications** - Professional certifications list
+- **Contact** - Social and contact links
 
 ## Tech Stack
 
 - Pure HTML5, CSS3, JavaScript
 - No frameworks or dependencies
-- Fully responsive design
-- Terminal-style UI/UX
+- CSS-only animations with `prefers-reduced-motion` support
 
 ## Local Development
 
-Simply open `index.html` in a web browser to view locally.
+```bash
+cd docs
+python -m http.server 8000
+```
+
+Visit `http://localhost:8000`
 
 ## GitHub Pages
 
-This site is hosted on GitHub Pages at: https://abhilashindulkar.github.io/abhilashindulkar/
+Hosted at: https://abhilashindulkar.github.io/abhilashindulkar/

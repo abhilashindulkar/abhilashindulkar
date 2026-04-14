@@ -1,191 +1,92 @@
 # Portfolio Deployment Guide
 
-## 🎯 What's Been Created
+## Project Structure
 
-Your terminal-themed DevOps portfolio has been created with:
-
-### Files Structure
 ```
 ├── docs/
 │   ├── index.html          # Main portfolio page
 │   ├── css/
-│   │   └── style.css       # Terminal styling
+│   │   └── style.css       # Styles & animations
 │   ├── js/
-│   │   ├── content.js      # Your resume data
-│   │   └── terminal.js     # Terminal functionality
+│   │   ├── content.js      # Portfolio data (single source of truth)
+│   │   └── app.js          # Tab switching & dynamic rendering
+│   ├── profile.jpg         # Profile picture
 │   └── README.md
 ├── .github/
 │   └── workflows/
 │       └── pages.yml       # GitHub Pages deployment workflow
-├── README.md               # Updated profile README
-└── DEPLOYMENT.md          # This file
+├── README.md               # Profile README
+├── CHANGELOG.md            # Version history
+├── LICENSE                 # MIT License
+└── DEPLOYMENT.md           # This file
 ```
 
-### Features
-✅ Interactive terminal interface
-✅ All content from your resume
-✅ Command-line navigation (help, about, experience, skills, certifications, projects, contact)
-✅ Command history (↑/↓ arrows)
-✅ Tab auto-complete
-✅ Fully responsive design
-✅ Professional terminal aesthetic
-
-## 🚀 Deployment Steps
+## Deployment Steps
 
 ### Step 1: Test Locally (Optional)
+
 ```bash
-# Open the portfolio locally in your browser
-start docs/index.html
-# or
-open docs/index.html  # on Mac/Linux
+cd docs
+python -m http.server 8000
+# Visit http://localhost:8000
 ```
 
 ### Step 2: Commit and Push Changes
+
 ```bash
-# Check current status
-git status
-
-# Add all new files
 git add .
-
-# Commit with a meaningful message
-git commit -m "Add terminal-themed portfolio website
-
-- Created interactive terminal-style portfolio
-- Added about, experience, skills, certifications, projects sections
-- Configured GitHub Pages deployment with GitHub Actions
-- Updated profile README with portfolio link"
-
-# Push to GitHub
+git commit -m "Update portfolio"
 git push origin main
 ```
 
 ### Step 3: Enable GitHub Pages
 
-1. Go to your repository on GitHub: https://github.com/abhilashindulkar/abhilashindulkar
-2. Click on **Settings** tab
-3. Scroll down to **Pages** section (left sidebar)
-4. Under **Build and deployment**:
-   - Source: Select **GitHub Actions**
-   - (The workflow will automatically deploy from the `docs` folder)
-5. Wait 1-2 minutes for the deployment to complete
+1. Go to repository **Settings** > **Pages**
+2. Under **Build and deployment**, set Source to **GitHub Actions**
+3. Wait 1-2 minutes for deployment
 
-### Step 4: Verify Deployment
+### Step 4: Verify
 
-Your portfolio will be live at:
-**https://abhilashindulkar.github.io/abhilashindulkar/**
+Live at: **https://abhilashindulkar.github.io/abhilashindulkar/**
 
-The GitHub Actions workflow will automatically:
-- Build and deploy on every push to main branch
-- Deploy from the `docs` folder
-- Update your live site within minutes
+The GitHub Actions workflow automatically deploys from the `docs` folder on every push to main.
 
-## 📝 Updating Content
+## Updating Content
 
-To update your portfolio content:
+All portfolio content lives in `docs/js/content.js`. Edit that file to update:
 
-1. Edit `docs/js/content.js` - Contains all your resume data
-2. Commit and push changes
-3. GitHub Actions will automatically redeploy
+- **Experience**: `portfolioData.experience` array
+- **Skills**: `portfolioData.skills` object
+- **Certifications**: `portfolioData.certifications` array
+- **Projects**: `portfolioData.projects` array
 
-### Common Updates
+After editing, commit and push. GitHub Actions redeploys automatically.
 
-**Update experience:**
-```javascript
-// Edit portfolioData.experience array in docs/js/content.js
-```
+## Customization
 
-**Add new certification:**
-```javascript
-// Add to portfolioData.certifications array in docs/js/content.js
-```
+**Change colors/styling** - edit CSS variables in `docs/css/style.css`:
 
-**Update skills:**
-```javascript
-// Modify portfolioData.skills object in docs/js/content.js
-```
-
-**Change colors/styling:**
 ```css
-/* Edit variables in docs/css/style.css */
 :root {
-    --text-color: #00ff00;  /* Change terminal text color */
-    --highlight: #ffff00;   /* Change highlight color */
+    --primary-color: #2563eb;
+    --accent-color: #3b82f6;
+    --bg-dark: #0f172a;
 }
 ```
 
-## 🎨 Customization Options
+**Modify layout** - edit `docs/index.html`
 
-### Change Terminal Color Scheme
-Edit `docs/css/style.css` `:root` variables:
-- `--text-color`: Main terminal text color (default: green)
-- `--highlight`: Highlight color for commands (default: yellow)
-- `--terminal-bg`: Terminal background (default: dark)
-
-### Add New Commands
-Edit `docs/js/terminal.js` and add to the `commands` object:
-```javascript
-this.commands = {
-    // ... existing commands
-    yourcommand: this.yourFunction.bind(this)
-};
-```
-
-### Modify ASCII Art
-Edit the ASCII art in `docs/index.html` in the `.ascii-art` section.
-
-## 🔧 Troubleshooting
+## Troubleshooting
 
 **Portfolio not showing up?**
-- Check GitHub Actions tab for deployment status
-- Ensure Pages is enabled in repository settings
-- Verify the workflow file is in `.github/workflows/pages.yml`
-- Check that you pushed to the `main` branch
+- Check the GitHub Actions tab for deployment status
+- Ensure Pages is enabled with Source set to GitHub Actions
+- Verify you pushed to the `main` branch
 
 **Content not updating?**
-- Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)
+- Clear browser cache (Ctrl+Shift+R)
 - Wait 1-2 minutes after push for GitHub Actions to complete
-- Check Actions tab for any errors
-
-**Styling issues on mobile?**
-- The site is responsive and tested on mobile devices
-- Clear browser cache if styles aren't loading
-
-## 📚 Terminal Commands Reference
-
-| Command | Description |
-|---------|-------------|
-| `help` | Show all available commands |
-| `about` | Display professional summary |
-| `experience` | Show work history |
-| `skills` | List technical skills |
-| `certifications` | Display all certifications |
-| `projects` | Showcase key projects |
-| `education` | Educational background |
-| `contact` | Contact information |
-| `links` | Social media links |
-| `resume` | Resume download info |
-| `clear` | Clear terminal screen |
-| `whoami` | Display current user |
-| `pwd` | Print working directory |
-| `ls` | List available sections |
-
-## 🌟 Next Steps
-
-1. **Test locally** - Open `docs/index.html` to preview
-2. **Push to GitHub** - Follow Step 2 above
-3. **Enable Pages** - Configure in GitHub settings
-4. **Share your portfolio** - Add the link to your resume, LinkedIn, etc.
-5. **Keep it updated** - Regularly update with new projects and certifications
-
-## 📞 Support
-
-If you encounter any issues:
-1. Check the GitHub Actions logs
-2. Review the browser console for JavaScript errors
-3. Ensure all file paths are correct
 
 ---
 
-Built with ❤️ using vanilla HTML, CSS, and JavaScript
-Terminal theme optimized for DevOps professionals
+Built with vanilla HTML, CSS, and JavaScript

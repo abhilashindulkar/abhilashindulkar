@@ -422,6 +422,7 @@ header, nav, main, footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
 }
 
 /* About Section */
@@ -986,4 +987,29 @@ header, nav, main, footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .tech-particle,
+    .tech-orbit,
+    .orbit-icon,
+    .profile-container::before,
+    .hero::before,
+    .hero::after {
+        animation: none;
+    }
+
+    .tab-content {
+        animation: none;
+    }
+
+    .timeline-item,
+    .skill-category,
+    .project-card,
+    .cert-card,
+    .social-link,
+    .contact-icon-link {
+        transition: none;
+    }
 }
