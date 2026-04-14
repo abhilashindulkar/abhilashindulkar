@@ -1,4 +1,3 @@
-// Portfolio content data extracted from resume
 const portfolioData = {
     about: {
         name: "Abhilash Indulkar",
@@ -35,7 +34,7 @@ Core Expertise:
                 "Successfully completed 3 applications migration from On-prem to GCP",
                 "Code reviews and collaboration with Data, Development, and Infrastructure teams"
             ],
-            tech: "Linux, Bash, GitHub, GHA, GCP, Azure, Terraform, Docker, Kubernetes, SRE, JIRA, Confluence, ServiceNow, GenAI, Sonarqube, Jfrog Artifactory, Helm, Istio"
+            tech: ["Linux", "Bash", "GitHub", "GHA", "GCP", "Azure", "Terraform", "Docker", "Kubernetes", "SRE", "JIRA", "Confluence", "ServiceNow", "GenAI", "Sonarqube", "Jfrog Artifactory", "Helm", "Istio"]
         },
         {
             company: "Quantiphi Inc.",
@@ -51,7 +50,7 @@ Core Expertise:
                 "Deploy ML Model tools into Docker Environment",
                 "Develop and improvise Azure Pipelines for various tech stacks"
             ],
-            tech: "Linux, Bash, Python, Github, Jenkins, Azure DevOps, GCP, AWS, Terraform, Docker, Kubernetes, JIRA, Confluence, ServiceNow, GenAI"
+            tech: ["Linux", "Bash", "Python", "GitHub", "Jenkins", "Azure DevOps", "GCP", "AWS", "Terraform", "Docker", "Kubernetes", "JIRA", "Confluence", "ServiceNow", "GenAI"]
         },
         {
             company: "OvalEdge India Pvt Ltd",
@@ -65,7 +64,7 @@ Core Expertise:
                 "Execute builds and troubleshoot build failures",
                 "Manage multi-cloud deployments (AWS, Azure, GCP)"
             ],
-            tech: "Linux, Bash, BitBucket, Jenkins, JIRA, AWS, Azure, GCP, Docker, Kubernetes, Okta"
+            tech: ["Linux", "Bash", "BitBucket", "Jenkins", "JIRA", "AWS", "Azure", "GCP", "Docker", "Kubernetes", "Okta"]
         },
         {
             company: "Wipro Ltd",
@@ -79,36 +78,36 @@ Core Expertise:
                 "Work with Development and Testing teams for build management",
                 "Execute builds and troubleshoot failures"
             ],
-            tech: "Linux, GitHub, Jenkins, Ansible, AWS, Microsoft AD, ADFS"
+            tech: ["Linux", "GitHub", "Jenkins", "Ansible", "AWS", "Microsoft AD", "ADFS"]
         }
     ],
 
     skills: {
-        "Operating System": "Linux (Ubuntu, RHEL), Windows",
-        "Version Control": "GitHub, GitLab, Bitbucket",
-        "Build Tools": "Maven",
-        "CI/CD": "GitHub Actions, Jenkins, Azure DevOps",
-        "Web Servers": "Apache Tomcat, Apache WebServer, Nginx",
-        "Containers": "Docker, Kubernetes, OpenShift",
-        "Config Management": "Ansible, Bash Scripting, Python",
-        "Infrastructure as Code": "Terraform, Terragrunt, CloudFormation",
-        "Artifactories": "Jfrog, Nexus",
-        "Cloud Platforms": "GCP (Primary), AWS, Azure",
-        "Databases": "MySQL, MongoDB",
-        "Monitoring": "Prometheus, Grafana, StackDriver, ELK Stack",
-        "Other Tools": "Helm, Kustomize, JIRA, ServiceNow, Confluence"
+        "Operating System": ["Linux (Ubuntu, RHEL)", "Windows"],
+        "Version Control": ["GitHub", "GitLab", "Bitbucket"],
+        "Build Tools": ["Maven"],
+        "CI/CD": ["GitHub Actions", "Jenkins", "Azure DevOps"],
+        "Web Servers": ["Apache Tomcat", "Apache WebServer", "Nginx"],
+        "Containers": ["Docker", "Kubernetes", "OpenShift"],
+        "Config Management": ["Ansible", "Bash Scripting", "Python"],
+        "Infrastructure as Code": ["Terraform", "Terragrunt", "CloudFormation"],
+        "Artifactories": ["Jfrog", "Nexus"],
+        "Cloud Platforms": ["GCP (Primary)", "AWS", "Azure"],
+        "Databases": ["MySQL", "MongoDB"],
+        "Monitoring": ["Prometheus", "Grafana", "StackDriver", "ELK Stack"],
+        "Other Tools": ["Helm", "Kustomize", "JIRA", "ServiceNow", "Confluence"]
     },
 
     certifications: [
-        { name: "Google Professional Cloud Developer", date: "May 2025", id: "d0a49c80-0fa4-4291-86f6-ca75442f52fd" },
-        { name: "Google Gen AI Leader", date: "Jun 2025", id: "424ccc5c56d247b88bbf4bca0523889c" },
-        { name: "Kubernetes and Cloud Native Associate (KCNA)", date: "Mar 2025", id: "LF-fk3nfei1e4" },
-        { name: "Google Professional Cloud Database Engineer", date: "Oct 2024", id: "bdde5539e1994534ba597248d65872f4" },
-        { name: "Google Professional Cloud DevOps Engineer", date: "Sep 2024", id: "341a22cf8e3141f383e61c3c8c103a27" },
-        { name: "HashiCorp Certified: Terraform Associate (003)", date: "May 2024", id: "5f012587-c15c-4427-8ca5-7ce883a69e13" },
-        { name: "Google Professional Cloud Architect", date: "Apr 2023", id: "c96e2e10-f1ce-464e-a69d-61eeaf3de2a9" },
-        { name: "AWS Cloud Practitioner", date: "Apr 2022", id: "D8MWFX0BN2B4129N" },
-        { name: "Google Associate Cloud Engineer", date: "Dec 2021", id: "5dbc02a5f3144cb184bba28d7e476b8e" }
+        { name: "Google Professional Cloud Developer", date: "May 2025", id: "d0a49c80-0fa4-4291-86f6-ca75442f52fd", provider: "google" },
+        { name: "Google Gen AI Leader", date: "Jun 2025", id: "424ccc5c56d247b88bbf4bca0523889c", provider: "google" },
+        { name: "Kubernetes and Cloud Native Associate (KCNA)", date: "Mar 2025", id: "LF-fk3nfei1e4", provider: "cncf" },
+        { name: "Google Professional Cloud Database Engineer", date: "Oct 2024", id: "bdde5539e1994534ba597248d65872f4", provider: "google" },
+        { name: "Google Professional Cloud DevOps Engineer", date: "Sep 2024", id: "341a22cf8e3141f383e61c3c8c103a27", provider: "google" },
+        { name: "HashiCorp Certified: Terraform Associate (003)", date: "May 2024", id: "5f012587-c15c-4427-8ca5-7ce883a69e13", provider: "hashicorp" },
+        { name: "Google Professional Cloud Architect", date: "Apr 2023", id: "c96e2e10-f1ce-464e-a69d-61eeaf3de2a9", provider: "google" },
+        { name: "AWS Cloud Practitioner", date: "Apr 2022", id: "D8MWFX0BN2B4129N", provider: "aws" },
+        { name: "Google Associate Cloud Engineer", date: "Dec 2021", id: "5dbc02a5f3144cb184bba28d7e476b8e", provider: "google" }
     ],
 
     projects: [
@@ -122,7 +121,7 @@ Core Expertise:
                 "Configured monitoring, logging, and SRE practices (SLIs/SLOs)",
                 "Implemented Toil automation for operational efficiency"
             ],
-            tech: "GCP, Terraform, GitHub Actions, Docker, Kubernetes, Helm, Istio"
+            tech: ["GCP", "Terraform", "GitHub Actions", "Docker", "Kubernetes", "Helm", "Istio"]
         },
         {
             name: "GCP Landing Zone & Data Ingestion Pipeline",
@@ -133,7 +132,7 @@ Core Expertise:
                 "Automated Pipeline orchestration with CI/CD",
                 "Deployed ML Model-based tools in containerized environments"
             ],
-            tech: "GCP, CFT, Terraform, Python, Docker, Jenkins, Azure DevOps"
+            tech: ["GCP", "CFT", "Terraform", "Python", "Docker", "Jenkins", "Azure DevOps"]
         },
         {
             name: "OvalEdge Multi-Cloud Deployment",
@@ -144,7 +143,7 @@ Core Expertise:
                 "Integrated with SSO tools (Okta) for enterprise authentication",
                 "Built automated build and deployment pipelines"
             ],
-            tech: "AWS, Azure, GCP, Docker, Kubernetes, Jenkins, Okta"
+            tech: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Jenkins", "Okta"]
         },
         {
             name: "Infrastructure Automation & Tooling",
@@ -156,7 +155,7 @@ Core Expertise:
                 "Set up VPN servers and Site-to-Site VPN for hybrid connectivity",
                 "Multi-tenant GKE Cluster governance using OPA and Kyverno policies"
             ],
-            tech: "Python, Terraform, Terragrunt, AWS, GCP, Kubernetes, OPA, Kyverno"
+            tech: ["Python", "Terraform", "Terragrunt", "AWS", "GCP", "Kubernetes", "OPA", "Kyverno"]
         }
     ],
 

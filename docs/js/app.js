@@ -1,5 +1,3 @@
-// Modern Portfolio App JavaScript
-
 document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderProjects();
     renderCertifications();
 
-    // Observer must run after render so dynamically created elements exist
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -36,32 +33,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.timeline-item, .skill-category, .project-card, .cert-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    document.querySelectorAll('.timeline-item, .skill-category, .project-card, .cert-card').forEach((el, i) => {
+        el.style.transitionDelay = `${i * 0.05}s`;
         observer.observe(el);
     });
 });
+
+function renderTechPills(techArray) {
+    return techArray
+        .map(t => `<span class="tech-pill">${t}</span>`)
+        .join('');
+}
 
 function renderExperience() {
     const timeline = document.getElementById('experience-timeline');
 
     portfolioData.experience.forEach(job => {
-        const timelineItem = document.createElement('div');
-        timelineItem.className = 'timeline-item';
+        const el = document.createElement('div');
+        el.className = 'timeline-item';
 
-        const responsibilitiesList = job.responsibilities
-            .map(resp => `<li>${resp}</li>`)
-            .join('');
-
-        timelineItem.innerHTML = `
+        el.innerHTML = `
             <div class="timeline-header">
                 <div class="company-name">${job.company}</div>
                 <div class="job-title">${job.title}</div>
@@ -72,79 +68,78 @@ function renderExperience() {
                 <p><strong>Project:</strong> ${job.project}</p>
             </div>
             <div class="responsibilities">
-                <ul>${responsibilitiesList}</ul>
+                <ul>${job.responsibilities.map(r => `<li>${r}</li>`).join('')}</ul>
             </div>
             <div class="tech-stack">
-                <strong>Technologies:</strong>
-                <span>${job.tech}</span>
+                <strong>Technologies</strong>
+                <div class="tech-pills">${renderTechPills(job.tech)}</div>
             </div>
         `;
 
-        timeline.appendChild(timelineItem);
+        timeline.appendChild(el);
     });
 }
 
 function renderSkills() {
-    const skillsGrid = document.getElementById('skills-grid');
+    const grid = document.getElementById('skills-grid');
 
-    Object.entries(portfolioData.skills).forEach(([category, skills]) => {
-        const skillCard = document.createElement('div');
-        skillCard.className = 'skill-category';
-        skillCard.innerHTML = `
+    Object.entries(portfolioData.skills).forEach(([category, items]) => {
+        const el = document.createElement('div');
+        el.className = 'skill-category';
+        el.innerHTML = `
             <h3>${category}</h3>
-            <p>${skills}</p>
+            <div class="skill-pills">${items.map(s => `<span class="skill-pill">${s}</span>`).join('')}</div>
         `;
-        skillsGrid.appendChild(skillCard);
+        grid.appendChild(el);
     });
 }
 
 function renderProjects() {
-    const projectsGrid = document.getElementById('projects-grid');
+    const grid = document.getElementById('projects-grid');
 
     portfolioData.projects.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'project-card';
+        const el = document.createElement('div');
+        el.className = 'project-card';
 
-        const highlightsList = project.highlights
-            .map(highlight => `<li>${highlight}</li>`)
-            .join('');
-
-        projectCard.innerHTML = `
+        el.innerHTML = `
             <h3>${project.name}</h3>
             <p class="project-description">${project.description}</p>
             <div class="project-highlights">
-                <ul>${highlightsList}</ul>
+                <ul>${project.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
             </div>
             <div class="project-tech">
-                <strong>Tech Stack:</strong> ${project.tech}
+                <strong>Tech Stack</strong>
+                <div class="tech-pills">${renderTechPills(project.tech)}</div>
             </div>
         `;
 
-        projectsGrid.appendChild(projectCard);
+        grid.appendChild(el);
     });
 }
+
+const PROVIDER_COLORS = {
+    google: '#4285f4',
+    aws: '#ff9900',
+    hashicorp: '#7b42bc',
+    cncf: '#446ca9'
+};
 
 function renderCertifications() {
-    const certificationsGrid = document.getElementById('certifications-grid');
+    const grid = document.getElementById('certifications-grid');
 
     portfolioData.certifications.forEach(cert => {
-        const certCard = document.createElement('div');
-        certCard.className = 'cert-card';
-        certCard.innerHTML = `
+        const el = document.createElement('div');
+        el.className = 'cert-card';
+        const color = PROVIDER_COLORS[cert.provider] || '#3b82f6';
+        el.style.setProperty('--cert-accent', color);
+
+        el.innerHTML = `
+            <span class="cert-provider">${cert.provider.toUpperCase()}</span>
             <div class="cert-name">${cert.name}</div>
-            <div class="cert-date">Issued: ${cert.date}</div>
-            <div class="cert-id">ID: ${cert.id}</div>
+            <div class="cert-date">${cert.date}</div>
+            <div class="cert-id">${cert.id}</div>
         `;
-        certificationsGrid.appendChild(certCard);
+
+        grid.appendChild(el);
     });
 }
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
