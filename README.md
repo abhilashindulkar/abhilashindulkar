@@ -11,4 +11,4 @@
 
 ## Connect
 
-[LinkedIn](https://www.linkedin.com/in/abhilashindulkar) · [GitHub](https://github.com/abhilashindulkar) · [Medium](https://abhilashindulkar.medium.com) · [YouTube](https://www.youtube.com/@starktalksdevops)
+[LinkedIn](https://www.linkedin.com/in/abhilashindulkar) · [Medium](https://abhilashindulkar.medium.com) · [YouTube](https://www.youtube.com/@starktalksdevops)
