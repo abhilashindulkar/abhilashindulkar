@@ -130,6 +130,19 @@ Core Expertise:
 
     projects: [
         {
+            name: "Azure Apps - GCP Migration (First American India)",
+            description: "Legacy Modernization / Cloud Transformation",
+            highlights: [
+                "Provision and manage GCP Organization infrastructure through Terraform and Spacelift",
+                "Develop and manage build, deploy, and GitHub Actions workflows for microservices",
+                "Release applications following SDLC Compliance through change management",
+                "AI adoption and agentic development using Claude Code and Cursor",
+                "Engineered the Azure Migration Assessment Tool, accelerating Azure resource discovery and migration readiness",
+                "Configure Auditing, Logging/Monitoring modules, SLIs/SLOs, Toil automation"
+            ],
+            tech: ["GCP", "Azure", "Terraform", "Spacelift", "GitHub Actions", "Docker", "Kubernetes", "Helm", "Sonarqube", "Jfrog Artifactory", "Claude Code", "Cursor"]
+        },
+        {
             name: "Legacy Modernization - Cloud Transformation",
             description: "On-Premises Applications Migration to GCP",
             highlights: [

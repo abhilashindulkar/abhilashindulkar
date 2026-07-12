@@ -103,7 +103,7 @@ function renderExperience() {
                 <span class="job-period">${job.period}</span>
             </div>
             <div class="project-info">
-                <p><strong>Client:</strong> ${job.client}</p>
+                ${job.client ? `<p><strong>Client:</strong> ${job.client}</p>` : ''}
                 <p><strong>Project:</strong> ${job.project}</p>
             </div>
             <div class="responsibilities">
