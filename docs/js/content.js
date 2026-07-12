@@ -1,9 +1,9 @@
 const portfolioData = {
     about: {
         name: "Abhilash Indulkar",
-        title: "Sr. Systems Engineer III - DevOps",
-        experience: "9.3 years",
-        summary: `Having 9.3 years of experience as a DevOps & Cloud Engineer with exposure to Software Configuration Management, Build & Release Management, IaC & CI/CD.
+        title: "Sr. Software Engineer II - DevOps",
+        experience: "9+ years",
+        summary: `Having 9+ years of experience as a DevOps & Cloud Engineer with exposure to Software Configuration Management, Build & Release Management, IaC & CI/CD.
 
 Certified: 6*GCP, HCTA-003, KCNA, 1*AWS
 
@@ -14,16 +14,33 @@ Core Expertise:
 • Configuration Management & Deployment (Ansible)
 • Cloud Platforms: GCP, AWS, Azure
 • Containerization & Orchestration: Docker, Kubernetes, OpenShift
-• Infrastructure as Code: Terraform, Terragrunt, CloudFormation
+• Infrastructure as Code: Terraform, Terragrunt, Spacelift, CloudFormation
 • Scripting: Bash, Python
-• Monitoring & Observability: Prometheus, Grafana, ELK Stack`
+• Monitoring & Observability: Prometheus, Grafana, ELK Stack
+• AI Adoption: Agentic development with Claude Code and Cursor`
     },
 
     experience: [
         {
+            company: "First American India",
+            title: "Sr. Software Engineer II - DevOps",
+            period: "Feb 2026 - Present",
+            project: "Legacy Modernization / Cloud Transformation (Azure Apps - GCP Migration)",
+            responsibilities: [
+                "Provision and manage GCP Organization infrastructure through Terraform and Spacelift",
+                "Develop and manage build, deploy, and GitHub Actions workflows for microservices",
+                "Release applications following SDLC Compliance through change management",
+                "AI adoption and agentic development using Claude Code and Cursor",
+                "Engineered the Azure Migration Assessment Tool, accelerating Azure resource discovery and migration readiness",
+                "Configure Auditing, Logging/Monitoring modules, SLIs/SLOs, Toil automation",
+                "Code reviews and collaboration with DNA, Cloud Engineering, and Cross teams"
+            ],
+            tech: ["Linux", "Bash", "GitHub", "GHA", "GCP", "Azure", "Terraform", "Spacelift", "Docker", "Kubernetes", "SRE", "JIRA", "Confluence", "ServiceNow", "Claude Code", "Cursor", "Sonarqube", "Jfrog Artifactory", "Helm"]
+        },
+        {
             company: "EPAM Systems",
             title: "Sr. Systems Engineer III - DevOps",
-            period: "Oct 2023 - Present",
+            period: "Oct 2023 - Jan 2026",
             client: "An Investment & Financial Services Company",
             project: "Legacy Modernization / Cloud Transformation (On-Prem Apps - GCP Migration)",
             responsibilities: [
