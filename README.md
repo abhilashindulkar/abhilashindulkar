@@ -1,4 +1,4 @@
-# Abhilash Indulkar - DevOps Portfolio 🚀
+# Abhilash Indulkar - Portfolio 🚀
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success?logo=github)](https://abhilashindulkar.github.io/abhilashindulkar/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
