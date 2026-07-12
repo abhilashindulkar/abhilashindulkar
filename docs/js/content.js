@@ -107,11 +107,12 @@ Core Expertise:
         "Web Servers": ["Apache Tomcat", "Apache WebServer", "Nginx"],
         "Containers": ["Docker", "Kubernetes", "OpenShift"],
         "Config Management": ["Ansible", "Bash Scripting", "Python"],
-        "Infrastructure as Code": ["Terraform", "Terragrunt", "CloudFormation"],
+        "Infrastructure as Code": ["Terraform", "Terragrunt", "Spacelift", "CloudFormation"],
         "Artifactories": ["Jfrog", "Nexus"],
         "Cloud Platforms": ["GCP (Primary)", "AWS", "Azure"],
         "Databases": ["MySQL", "MongoDB"],
         "Monitoring": ["Prometheus", "Grafana", "StackDriver", "ELK Stack"],
+        "AI & Agentic Dev": ["Cursor", "Claude Code"],
         "Other Tools": ["Helm", "Kustomize", "JIRA", "ServiceNow", "Confluence"]
     },
 
